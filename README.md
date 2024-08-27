@@ -53,6 +53,10 @@ However, there is a driver ``driver1`` at ``(99,99)`` who is about to finish up 
 Our current algorithm would assign ``load1`` to one of the free drivers who is more than an hour away from the pickup location, instead of waiting for
 ``driver1`` to finish up their load and pickup ``load1`` once they are done.
 
+## Future work and improvements
+The reading of the input file and ``route`` method could be made multithreaded. However, for this load test,
+the multithreaded architecture was actually producing higher time to complete the loads than a single threaded process.
+
 ## References
 [Wikipedia](https://en.wikipedia.org/wiki/Vehicle_routing_problem)
 
