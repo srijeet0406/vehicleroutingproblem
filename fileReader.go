@@ -10,7 +10,7 @@ import (
 
 // readLoadsFromFile reads the list of loads from an input file
 func readLoadsFromFile(fileName string) ([]Load, error) {
-	nodes := make([]Load, 0)
+	loads := make([]Load, 0)
 	file, err := os.Open(fileName)
 	if err != nil {
 		return nil, err
@@ -64,15 +64,15 @@ func readLoadsFromFile(fileName string) ([]Load, error) {
 			x: destinationX,
 			y: destinationY,
 		}
-		node := Load{
+		load := Load{
 			ID:      id,
 			Pickup:  sourceLocation,
 			DropOff: destinationLocation,
 		}
-		nodes = append(nodes, node)
+		loads = append(loads, load)
 	}
 	if err := scanner.Err(); err != nil {
 		return nil, err
 	}
-	return nodes, nil
+	return loads, nil
 }

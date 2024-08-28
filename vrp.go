@@ -16,6 +16,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// currently the result of the route function is not being used anywhere
+	// however, if you'd like to see the final cost, print out the returned value here
 	_ = route(loads)
 }
 
